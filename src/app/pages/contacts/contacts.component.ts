@@ -19,7 +19,7 @@ export class ContactsComponent implements OnInit {
     { id: 3, firstName: "Sangeeth", lastName: "Rajan", email: "srajan@gmail.com", phoneNumber: "868584877", city: "kkdi", country: "India" }
   ];
   unSubscribe$ = new Subject();
-  showConfirmModel: boolean = true;
+  showConfirmModel: boolean = false;
   cols = [
     { field: 'edit', header: 'Edit' },
     { field: 'firstName', header: 'First name' },
@@ -51,9 +51,10 @@ export class ContactsComponent implements OnInit {
 
       accept: () => {
         this.delete(rowData);
+        this.showConfirmModel = false;
       },
       reject: () => {
-
+        this.showConfirmModel = false;
       }
     });
   }
