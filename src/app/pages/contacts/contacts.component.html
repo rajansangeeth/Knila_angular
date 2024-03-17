@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="d-flex justify-content-end py-2">
+    <button class="btn btn-primary" (click)="addContact()">Add Contact</button>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th *ngFor="let item of cols">
+          {{item?.header}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let eachContact of contacts">
+        <tr>
+          <ng-container *ngFor="let item of cols">
+            <td *ngIf="item.field == 'edit'">
+              <i class="pi pi-pencil" style="font-size: 1rem" (click)="edit(eachContact)"></i>
+            </td>
+            <td *ngIf="item.field != 'edit' && item.field != 'delete'">
+              {{eachContact?.[item.field]}}
+            </td>
+            <td *ngIf="item.field === 'delete'">
+              <i class="pi pi-trash" style="font-size: 1rem" (click)="confirm(eachContact)"></i>
+            </td>
+          </ng-container>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+</div>
+
+
+<p-confirmDialog *ngIf="showConfirmModel">
+  <ng-template pTemplate="message" let-message>
+    <div class="flex flex-column align-items-center w-full gap-3 border-bottom-1 surface-border">
+      <i class="pi pi-exclamation-circle text-6xl text-primary-500"></i>
+      <p>Are you sure want to delete this contact?</p>
+    </div>
+  </ng-template>
+</p-confirmDialog>

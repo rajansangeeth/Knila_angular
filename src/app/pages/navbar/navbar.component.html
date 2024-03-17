@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/pages/contacts">Logo</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" #navButton (click)="toggle()">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav" #navContainer>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link cursor" routerLink="/pages/contacts">Contacts</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link cursor" routerLink="/auth/login">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

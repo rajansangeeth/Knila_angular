@@ -1,0 +1,23 @@
+.card {
+  // width: 25rem;
+}
+
+.btn-container {
+  width: 100%;
+  text-align: right;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.underline {
+  width: 100px;
+  height: 6px;
+  background-color: red;
+  border-radius: 1rem;
+  margin: auto auto;
+}
